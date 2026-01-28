@@ -2,77 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 222 47% 11%;
-    --foreground: 213 31% 91%;
-    --card: 217 33% 17%;
-    --card-foreground: 213 31% 91%;
-    --popover: 217 33% 17%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 21%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 217 33% 21%;
-    --muted-foreground: 213 17% 61%;
-    --accent: 262 80% 65%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 213 31% 91%;
-    --border: 217 33% 21%;
-    --input: 217 33% 21%;
-    --ring: 217 91% 60%;
-    --radius: 0.5rem;
-    --chart-1: 217 91% 60%;
-    --chart-2: 262 80% 65%;
-    --chart-3: 173 80% 40%;
-    --chart-4: 43 96% 56%;
-    --chart-5: 27 87% 67%;
-  }
+:root {
+  --background: 222 47% 11%;
+  --foreground: 213 31% 91%;
+  --card: 217 33% 17%;
+  --card-foreground: 213 31% 91%;
+  --popover: 217 33% 17%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 21%;
+  --secondary-foreground: 213 31% 91%;
+  --muted: 217 33% 21%;
+  --muted-foreground: 213 17% 61%;
+  --accent: 262 80% 65%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 85% 60%;
+  --destructive-foreground: 213 31% 91%;
+  --border: 217 33% 21%;
+  --input: 217 33% 21%;
+  --ring: 217 91% 60%;
+  --radius: 0.5rem;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+* {
+  border-color: hsl(var(--border));
 }
 
-@layer utilities {
-  .glass {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
-  }
-  
-  .glass-card {
-    @apply glass rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-white/10;
-  }
-  
-  .gradient-border {
-    position: relative;
-    background: linear-gradient(
-      to bottom right,
-      hsl(var(--card)),
-      hsl(var(--card))
-    );
-    border: 2px solid transparent;
-    background-clip: padding-box;
-  }
-  
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    margin: -2px;
-    border-radius: inherit;
-    background: linear-gradient(
-      135deg,
-      hsl(var(--primary)),
-      hsl(var(--accent))
-    );
-  }
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(to bottom right, hsl(var(--card)), hsl(var(--card)));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
 }
