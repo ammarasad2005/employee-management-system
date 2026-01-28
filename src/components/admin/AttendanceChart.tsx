@@ -61,7 +61,7 @@ export function AttendanceChart() {
     return (
         <div className="glass-card p-6">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold">This Week's Attendance</h2>
+                <h2 className="text-xl font-bold">This Week&apos;s Attendance</h2>
                 <TrendingUp className="w-5 h-5 text-primary" />
             </div>
 

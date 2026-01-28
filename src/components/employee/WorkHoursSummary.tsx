@@ -25,7 +25,7 @@ export async function WorkHoursSummary({ userId }: WorkHoursSummaryProps) {
     return (
         <div className="glass-card p-6">
             <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold">This Week's Hours</h2>
+                <h2 className="text-xl font-bold">This Week&apos;s Hours</h2>
                 <Clock className="w-5 h-5 text-primary" />
             </div>
 

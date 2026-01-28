@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({ subsets: ["latin"] });
+// Use system fonts for better hosting compatibility
+const fontClass = "font-sans";
 
 export const metadata: Metadata = {
   title: "Employee Management System",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body className={fontClass}>
         {children}
         <Toaster
           position="top-right"

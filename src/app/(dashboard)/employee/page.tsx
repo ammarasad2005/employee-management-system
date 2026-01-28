@@ -98,7 +98,7 @@ export default async function EmployeeDashboard() {
                             </div>
                         )}
                     </div>
-                    <h3 className="text-sm text-muted-foreground mb-1">Today's Status</h3>
+                    <h3 className="text-sm text-muted-foreground mb-1">Today&apos;s Status</h3>
                     <p className="text-2xl font-bold">
                         {todayAttendance
                             ? todayAttendance.check_out
